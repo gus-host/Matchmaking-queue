@@ -1,0 +1,99 @@
+Step1: Add 5 players/users
+
+mutation {
+  addRequest(userId: "Player1", rank: 10) {
+    ok
+    error
+  }
+}
+
+mutation {
+  addRequest(userId: "Player2", rank: 600) {
+    ok
+    error
+  }
+}
+
+mutation {
+  addRequest(userId: "Player3", rank: 1800) {
+    ok
+    error
+  }
+}
+
+mutation {
+  addRequest(userId: "Player4", rank: 2500) {
+    ok
+    error
+  }
+}
+
+mutation {
+  addRequest(userId: "Player5", rank: 3100) {
+    ok
+    error
+  }
+}
+
+Step2: View current queue status
+
+query {
+  queueStatus {
+    userId
+    rank
+  }
+}
+
+Step3: Add 3 new players
+
+mutation {
+  addRequest(userId: "Player6", rank: 20) {
+    ok
+    error
+  }
+}
+
+mutation {
+  addRequest(userId: "Player7", rank: 650) {
+    ok
+    error
+  }
+}
+
+mutation {
+  addRequest(userId: "Player8", rank: 1820) {
+    ok
+    error
+  }
+}
+
+step4: Check current queue status
+query {
+  queueStatus {
+    userId
+    rank
+  }
+}
+
+
+step5: Check current match history
+query {
+  matchHistory(limit: 5) {
+    timestamp
+    users {
+      userId
+      rank
+    }
+  }
+}
+
+step6: Subscribing to Match Notifications
+
+subscription {
+  matchFound(userId: "Player1") {
+    users {
+      userId
+      rank
+    }
+  }
+}
