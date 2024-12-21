@@ -1,6 +1,6 @@
-# Matchmaking Queue
+# Matchmaking Queue: A Real-Time Skill-Based System
 
-A real-time matchmaking system built with Elixir and GraphQL that pairs users based on their skill rankings.
+The Matchmaking Queue is a real-time system that pairs users based on their skill rankings. It:
 
 ## Overview
 
@@ -19,8 +19,6 @@ Queue of Matchmaking is a skill-based matchmaking system that:
 - **Absinthe** - GraphQL implementation
 - **ETS** - In-memory storage
 
-#### Note: 
-I recommend you run the command on github code space for a smooth development process, more preferrably the codespace for this repo. You could also folk this repository.
 
 ## Pre-Setup
 
@@ -59,8 +57,6 @@ mix deps.get
 ```bash
 mix phx.server
 ```
-
-The GraphQL endpoint will be available at `https://fictional-sniffle-j69v4xrqr45cpjrq-4000.app.github.dev/graphiql` i.e if you are using the codespace for this repo. If not replace https://fictional-sniffle-j69v4xrqr45cpjrq-4000.app.github.dev with your forwarded address
 
 ## API Usage
 
@@ -202,33 +198,20 @@ When a match is found, subscribers receive:
 
 The system uses an expanding window approach to create fair matches:
 
-1. Initial matching attempts to find users within ±10 rank points
-2. If no match is found, the range expands by 90 points each iteration
-3. Maximum rank difference allowed is 500 points
-4. Users are paired with the closest available match within the current range
+1. Initial Range: ±10 rank points.
+2. Expands by 90 Points: If no match is found.
+3. Max Rank Difference: 500 points.
+4. Fair Matches: Users are paired with the closest available match.
 
 This approach balances match fairness with queue times:
 
-- Quick matches for players when similarly ranked opponents are available
-- Gradually relaxed requirements to prevent excessive wait times
-- Hard limit on rank difference to prevent highly mismatched games
-
 ## Implementation Details
 
-### Data Storage
+### Data Storage: 
+Uses ETS tables for in-memory storage (active queue and completed matches).
 
-- Uses ETS tables for in-memory storage:
-  - `matchmaking_queue`: Ordered set for active queue (sorted by rank)
-  - `matches`: Set for completed match history
-- Protected access for data integrity
-- Efficient rank-based matching using ETS ordered sets
-
-### Concurrency Handling
-
-- GenServer manages state and synchronizes operations
-- ETS provides atomic operations for queue management
-- Phoenix PubSub handles real-time notifications
-- Absinthe manages subscription state
+### Concurrency Handling:
+ Managed by GenServer, with Phoenix PubSub for real-time notifications.
 
 ## Configuration
 
@@ -250,70 +233,27 @@ Run the test suite:
 mix test
 ```
 
-Tests cover:
+Tests covers: Tests cover queue operations, match processing, GraphQL mutations, real-time subscriptions, and edge cases.
 
-- Queue operations
-- Match processing
-- GraphQL mutations and queries
-- Real-time subscriptions
-- Concurrent request handling
-- Edge cases and validation
+## Why Adopt This Tool
 
-## Reason why users should adopt this tool
-The Matchmaking Queue Tool can be a valuable addition for users seeking to optimize and streamline matching processes in various scenarios, such as gaming, hiring, dating, or team-building. Here's why users should consider adopting it:
+1. Efficient Pairing: Automates the matching process, ensuring fair pairings and scalability.
 
-1. Efficient Pairing of Users
-The tool automates the process of matching users based on predefined criteria, eliminating manual efforts. Whether it's matching players in a multiplayer game or pairing participants in a networking event, it ensures:
+2. Customizability: Tailorable for gaming, hiring, social apps, and more.
 
-- Speedy matching.
-- Fair and balanced pairings.
-- Scalability to handle large user pools.
+3. Enhanced User Experience:  Reduced wait times and improved match quality.
 
-2. Customizability
-The matchmaking queue can be tailored to fit diverse use cases:
+4. Supports Advanced Logic: Supports priority queues, dynamic matching, and group matching.
 
-- Gaming: Match players based on skill level, region, or latency.
-- Hiring: Pair candidates with recruiters based on skill sets and job requirements.
-- Social Apps: Facilitate connections based on shared interests, proximity, or preferences.
+5. Real-Time Notifications: Live updates and insights into matching trends.
 
-3. Enhanced User Experience
-By reducing wait times and providing quality matches, users will enjoy:
+6. Integration: Seamlessly integrates with APIs and real-time systems.
 
-- A more seamless experience.
-- Increased engagement due to relevant pairings.
-- Reduced frustration from mismatches or delays.
+7. Open Source: Transparency and community-driven improvements.
 
-4. Supports Advanced Logic
-The tool can incorporate:
 
-- Priority Queues: Users with premium subscriptions or high priority can be matched faster.
-- Dynamic Matching: Adapts to user behavior, preferences, or feedback over time.
-- Group Matching: Facilitates team formations in collaborative settings.
+**Adoption Scenarios** : Gaming, hiring, social apps, educational platforms, corporate tools.
 
-5. Integration with Existing Systems
-The tool is built to integrate seamlessly with platforms that:
-
-- Use APIs for user management.
-- Leverage GraphQL for query efficiency and data fetching.
-- Need real-time matching through WebSocket or live updates.
-
-6. Open Source and Community-Driven
-If built as open-source (like the repository you're working on), users benefit from:
-
-- Transparency of the codebase.
-- The ability to modify and improve it for specific needs.
-- Contributions from a community of developers, ensuring continuous improvement.
-
-7. Real-Time Analytics and Insights
-Users can gain valuable insights, such as:
-
-- Matching trends.
-- Bottlenecks in the queue.
-- Success rates of matches.
-These metrics can drive decision-making and optimize future matches.
-
-### Adoption Scenarios
-- Gaming Companies: To provide skill-based and latency-aware matchmaking.
-- Educational Platforms: To pair students with mentors or collaborators.
-- Social and Dating Apps: To ensure meaningful and satisfying connections.
-- Corporate Tools: To streamline hiring or networking processes.
+### Additional Notes:
+- Check out the follow_video.txt file to follow [video]()
+- For a smooth development process, it’s recommended to run the commands on GitHub Codespaces, particularly for this repo. You can also fork this repository.
