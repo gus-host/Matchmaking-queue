@@ -1,4 +1,4 @@
-# Queue of Matchmaking
+# Matchmaking Queue
 
 A real-time matchmaking system built with Elixir and GraphQL that pairs users based on their skill rankings.
 
@@ -18,6 +18,33 @@ Queue of Matchmaking is a skill-based matchmaking system that:
 - **Phoenix** - Web framework
 - **Absinthe** - GraphQL implementation
 - **ETS** - In-memory storage
+
+#### Note: 
+I recommend you run the command on github code space for a smooth development process, more preferrably the codespace for this repo. You could also folk this repository.
+
+## Pre-Setup
+
+1. Install Home Brew:
+If you have brew already installed you don't need to run the following commands
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+You can then run the following commands:
+```bash
+echo >> /home/codespace/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/codespace/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+
+sudo apt-get install build-essential
+brew update
+```
+
+2. Install Elixir:
+
+```bash
+brew install elixir
+```
 
 ## Setup
 
