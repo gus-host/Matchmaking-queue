@@ -255,7 +255,7 @@ Tests covers: Tests cover queue operations, match processing, GraphQL mutations,
 **Adoption Scenarios** : Gaming, hiring, social apps, educational platforms, corporate tools.
 
 ### Additional Notes:
-- Check out the follow_video.txt file to follow the [video](https://www.youtube.com/watch?v=14Cg4HDMLwo)
+- Check out the follow_video.txt file in root directory to follow the [video](https://www.youtube.com/watch?v=14Cg4HDMLwo)
 - For a smooth development process, it’s recommended to run the commands on GitHub Codespaces, particularly for this repo. You can also fork this repository.
 - The GraphQL endpoint is available at https://fictional-sniffle-j69v4xrqr45cpjrq-4000.app.github.dev/graphiql if using GitHub Codespace. If not, replace https://fictional-sniffle-j69v4xrqr45cpjrq-4000.app.github.dev with your forwarded address.
 
