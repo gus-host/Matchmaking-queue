@@ -259,3 +259,5 @@ Tests covers: Tests cover queue operations, match processing, GraphQL mutations,
 - For a smooth development process, it’s recommended to run the commands on GitHub Codespaces, particularly for this repo. You can also fork this repository.
 - The GraphQL endpoint is available at https://fictional-sniffle-j69v4xrqr45cpjrq-4000.app.github.dev/graphiql if using GitHub Codespace. If not, replace https://fictional-sniffle-j69v4xrqr45cpjrq-4000.app.github.dev with your forwarded address.
 
+- discord handle: chrisdev_74671
+- X handle: [here](https://x.com/ChrisDev879850)
