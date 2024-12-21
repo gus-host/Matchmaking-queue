@@ -60,7 +60,7 @@ mix deps.get
 mix phx.server
 ```
 
-The GraphQL endpoint will be available at `http://localhost:4000/graphql`
+The GraphQL endpoint will be available at `https://fictional-sniffle-j69v4xrqr45cpjrq-4000.app.github.dev/graphiql` i.e if you are using the codespace for this repo. If not https://fictional-sniffle-j69v4xrqr45cpjrq-4000.app.github.dev should be your forwarded address
 
 ## API Usage
 
